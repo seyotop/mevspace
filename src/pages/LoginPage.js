@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importuj useNavigate z react-router-dom
+import { useNavigate } from 'react-router-dom'; 
 import '../styles/LoginPage.css';
 import logo from '../assets/logo.png'; 
 
-// Lista użytkowników
 const users = [
   { id: 1, firstName: "Szymon", lastName: "Kostrzewa" },
   { id: 2, firstName: "Bartosz", lastName: "Dzik" },
@@ -21,22 +20,20 @@ const users = [
 
 
 function LoginPage() {
-  const navigate = useNavigate(); // Zainicjalizuj useNavigate
+  const navigate = useNavigate(); 
 
-// Funkcja logowania
 const handleLogin = (user) => {
-  // Zapisz wybranego użytkownika w localStorage
   localStorage.setItem('loggedUser', JSON.stringify({
     id: user.id,
-    name: user.firstName + ' ' + user.lastName // Zapisywanie pełnego imienia i nazwiska
+    name: user.firstName + ' ' + user.lastName
   }));
-  // Przekierowanie do strony użytkownika
+
   navigate(`/user/${user.id}`);
 };
 
-  // Funkcja do logowania jako admin
+  
   const handleAdminLogin = () => {
-    navigate('/admin'); // Przekieruj na stronę logowania admina
+    navigate('/admin'); 
   };
 
   return (
@@ -51,7 +48,7 @@ const handleLogin = (user) => {
     <div
       key={user.id}
       className="user-tile"
-      onClick={() => handleLogin(user)} // Zaktualizowane, aby wywołać handleLogin
+      onClick={() => handleLogin(user)} 
     >
       <div>{user.firstName}</div>
       <div>{user.lastName}</div>
@@ -59,7 +56,6 @@ const handleLogin = (user) => {
   ))}
 </div>
 
-      {/* Konto Admin w prawym dolnym rogu */}
       <div className="admin-account" onClick={handleAdminLogin}>
         Admin
       </div>

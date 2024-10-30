@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
-import '../styles/AdminLogin.css'; // Importuj plik CSS
+import '../styles/AdminLogin.css'; 
 import logo from '../assets/logo.png';
 
 const AdminLogin = () => {
-  const [password, setPassword] = useState(''); // Zmienna do hasła
-  const [error, setError] = useState(''); // Zmienna do błędów
+  const [password, setPassword] = useState(''); 
+  const [error, setError] = useState(''); 
 
   const handleLogin = () => {
-    // Tutaj możesz dodać logikę logowania admina
-    if (password === 'haslo') { // Zmień na prawdziwe hasło
-      alert('Zalogowano jako Admin!');
-      // Przenieś do głównej strony lub dodaj logikę
+    if (password === 'haslo') { ('Zalogowano jako Admin!');
     } else {
-      setError('Nieprawidłowe hasło'); // Ustaw błąd
+      setError('Nieprawidłowe hasło'); 
     }
   };
 
