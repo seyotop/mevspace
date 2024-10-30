@@ -15,7 +15,7 @@ const UserPage = () => {
   const handleOptionClick = (option) => {
     setActiveRectangle(option); 
   };
-
+//potrzebne
   return (
     <div className="user-page">
       <div className="options">
