@@ -1,0 +1,106 @@
+:root {
+  --dark-blue: #032043;
+  --light-blue: #3177ea;
+  --white: #ffffff;
+  --gray: #e0e0e0;
+  --red: #f73939;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--white);
+  color: var(--white);
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Zmniejszone odstępy */
+}
+
+.logo {
+  width: 150px; /* Zmniejszona szerokość logo */
+  height: auto;
+}
+
+.select-user {
+  font-size: 20px; /* Zmniejszona czcionka */
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-blue);
+  text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Zmiana minmax, aby dostosować szerokość kafelków */
+  gap: 6%;
+  width: 80%; /* Szerokość kafelków dostosowana do 80% */
+  max-width: 600px;
+  margin-bottom: 40px; /* Zmniejszone odstępy */
+}
+
+.user-tile {
+  background-color: var(--white);
+  color: var(--dark-blue);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px; /* Zmniejszona czcionka */
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  line-height: 1.5; /* Ustawienie wysokości linii, aby zwiększyć odstęp */
+}
+
+.user-tile:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  transform: scale(1.04);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-tile:active {
+  transform: scale(1);
+  background-color: var(--gray);
+}
+
+.admin-account {
+  position: absolute; 
+  bottom: 20px; 
+  right: 20px; 
+  padding: 10px 15px;
+  background-color: var(--dark-blue); 
+  color: white; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.admin-account:hover {
+  background-color: var(--red); 
+  transform: scale(1.05);
+}
+
+/* Dodatkowe media queries dla responsywności */
+@media (max-width: 600px) {
+  .login-header {
+    flex-direction: column; /* Zmiana kierunku dla mniejszych ekranów */
+    align-items: center; /* Wyśrodkowanie w poziomie */
+  }
+  .select-user {
+    font-size: 18px; /* Zmniejszona czcionka na małych ekranach */
+  }
+  .user-grid {
+    width: 90%; /* Szerokość kafelków dostosowana do 90% na małych ekranach */
+  }
+  .user-tile {
+    font-size: 14px; /* Zmniejszona czcionka dla kafelków */
+  }
+}

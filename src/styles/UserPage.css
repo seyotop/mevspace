@@ -1,0 +1,84 @@
+:root {
+  --dark-blue: #032043;
+  --light-blue: #3177ea;
+  --white: #ffffff;
+  --gray: #e0e0e0;
+  --red: #f73939;
+}
+
+.user-page {
+  background-color: white; /* Białe tło */
+  height: 100vh; /* Wysokość na 100% widoku */
+  display: flex;
+  flex-direction: column; /* Ustawienie kolumny dla h1 i footer */
+  align-items: center; /* Wyśrodkowanie w poziomie */
+  justify-content: flex-start; /* Ustawienie na początek w pionie */
+  padding: 20px; /* Padding dla wewnętrznych elementów */
+  box-sizing: border-box; /* Wliczaj padding w całkową wysokość */
+}
+
+.options {
+  display: flex; /* Ustawienie opcji w linii */
+  gap: 10px; /* Odstęp między kafelkami */
+  margin-bottom: 20px; /* Odstęp od prostokątów */
+}
+
+.option {
+  background-color: var(--white); /* Białe tło dla kafelków */
+  color: var(--dark-blue); /* Ciemnoniebieski tekst */
+  padding: 15px; /* Padding wewnętrzny */
+  border-radius: 8px; /* Zaokrąglone rogi */
+  border: 1px solid gray; /* Szare obramowanie */
+  cursor: pointer; /* Wskaźnik zmienia się na kursor */
+  transition: transform 0.2s ease, background-color 0.3s ease; /* Płynna zmiana koloru tła i animacja transformacji */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  flex-grow: 1; /* Równomierne rozłożenie kafelków */
+  min-width: 120px; /* Minimalna szerokość kafelka */
+}
+
+.option:hover {
+  background-color: var(--dark-blue); /* Zmiana koloru tła przy najechaniu */
+  color: var(--white); /* Zmiana koloru tekstu na biały */
+  transform: scale(1.04); /* Powiększenie kafelka */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Dodaj cień */
+}
+
+.rectangle-container {
+  display: flex; /* Ustawienie prostokątów w poziomie */
+  justify-content: flex-start; /* Ustawienie prostokątów w lewym rogu */
+  align-items: flex-start; /* Ustawienie wyrównania w pionie na początek */
+  margin-top: 20px; /* Odstęp od kafelków */
+  width: calc(100% - 40px); /* Ustaw szerokość kontenera na 100% minus padding */
+  flex-grow: 1; /* Pozwól kontenerowi na wypełnienie pozostałej przestrzeni */
+}
+
+.rectangle {
+  flex: 1; /* Ustaw proporcje na 1, aby zajmowały równą przestrzeń */
+  height: calc(70vh - 50px); /* Ustaw wysokość prostokąta na 70% wysokości widoku minus miejsce na inne elementy */
+  background-color: white; /* Tło głównego prostokąta na biały */
+  border-radius: 20px; /* Zaokrąglone rogi */
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
+  align-items: center; /* Wyśrodkowanie zawartości w pionie */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Cień dla głównego prostokąta */
+  margin-left: 20px; /* Odstęp od prostokąta nawigacyjnego */
+}
+
+.sidebar {
+  width: 250px; /* Zwiększona szerokość prostokąta nawigacyjnego */
+  height: calc(70vh - 50px); /* Wysokość prostokąta nawigacyjnego */
+  background-color: var(--dark-blue); /* Kolor tła prostokąta nawigacyjnego */
+  border-radius: 20px 0 0 20px; /* Zaokrąglone rogi z lewej strony */
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
+  align-items: center; /* Wyśrodkowanie zawartości w pionie */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Cień dla prostokąta nawigacyjnego */
+}
+
+.footer {
+  position: absolute; /* Ustawienie pozycji absolutnej */
+  bottom: 20px; /* Odległość od dołu */
+  left: 20px; /* Odległość od lewej */
+  font-size: 14px; /* Rozmiar czcionki */
+  color: gray; /* Kolor tekstu */
+}
